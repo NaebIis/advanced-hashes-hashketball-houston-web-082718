@@ -121,11 +121,20 @@ end
 
 
 
-def num_points_scored(player_name)
-    game_hash.each do |location, team_data|
-      team_data.each do |stats, values|
+num_points_scored(player_name)
+nuarray = []
+game_hash.each do |location, team_data|
+  team_data.each do |attribute, values|
+    if attribute == :players
+      values.each do |person, data| 
+        data.each do |i, j|
+          if person == :player_name && i = :points
+            nuarray.push(j)
+          end
+        end
       end
     end
+  end
 end
 
 
